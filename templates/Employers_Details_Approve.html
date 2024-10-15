@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Details</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Employers_Details_Approve.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Employer Details</h1>
+        <div class="details-item">
+            <label>Organization Name:</label><br>
+            <span>{{ employer_data[1] }}</span>
+        </div>
+        <div class="details-item">
+            <label>Established On:</label><br>
+            <span>{{ employer_data[2] }}</span>
+        </div>
+        <div class="details-item">
+            <label>About Company:</label><br>
+            <span>{{ employer_data[3] }}</span>
+        </div>
+        <div class="details-item">
+            <label>Address:</label><br>
+            <span>{{ employer_data[4] }}</span>
+        </div>
+        <div class="details-item">
+            <label>Mobile:</label><br>
+            <span>{{ employer_data[5] }}</span>
+        </div>
+        <div class="details-item">
+            <label>Telephone:</label><br>
+            <span>{{ employer_data[6] }}</span>
+        </div>
+        <div class="details-item">
+            <label>Email:</label><br>
+            <span>{{ employer_data[7] }}</span>
+        </div>
+        <div class="details-item">
+            <label>Website:</label><br>
+            <span>{{ employer_data[8] }}</span>
+        </div>
+        <form action="/update_flag" method="post">
+            <input type="hidden" name="organization_name" value="{{ employer_data[1] }}">
+            <button type="submit" name="flag" value="A" class="btn btn-success btn-action">Approve</button>
+            <button type="submit" name="flag" value="R" class="btn btn-danger btn-action">Reject</button>
+        </form>
+        
+    </div>
+</body>
+</html>

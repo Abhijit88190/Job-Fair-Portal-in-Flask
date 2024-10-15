@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Registration Table</title>
+    <!--This html page will be show only to ("DEO")-->
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Employer_Lists.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 style="text-align:center; margin-left:350px; position:fixed">Employer Registration Table</h2>
+            </div>
+            <div class="col text-right">
+                <a href="/deo_dashboard" class="btn btn-secondary">Home</a>
+            </div>
+        </div><br>
+            <table class="table table-striped" style="border-radius: 5px; border: 1px solid black; margin-top:10px;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Organization Name</th>
+                    <th>Established On</th>
+                    <th>Address</th>
+                    <th>Mobile</th>
+                    <th>Telephone</th>
+                    <th>Email</th>
+                    <th>Website</th>
+                    <th>Status</th>
+                    <th>Details</th>
+                    <th>Interview Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[4] }}</td> 
+                    <td>{{ row[5] }}</td>
+                    <td>{{ row[6] }}</td>
+                    <td>{{ row[7] }}</td>
+                    <td>{{ row[8] }}</td>
+                    
+                    <td>
+                        {% if row[10] == 'P' %}
+                            Pending
+                        {% elif row[10] == 'A' %}
+                            Approved
+                        {% elif row[10] == 'R' %}
+                            Rejected
+                        {% endif %}
+                    </td>
+                    <td><a href="/employers_details_approve/{{ row[0] }}">View</a></td>
+                    <td>{{ row[11] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        div {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        p {
+            text-align:center;
+            margin-bottom: 10px;
+        }
+        
+        strong {
+            font-weight: bold;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .edit-button {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-left:690px;
+        }
+        
+        .back-button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>        
+</head>
+<body>
+    <h1>Student Profile</h1>
+    <div>
+        {% if image_url %}
+                    <img id="profile-picture" class="user-image" src="{{ session['image_url'] }}" alt="Profile Picture">
+                    {% else %}
+                    <p>No image found.</p>
+                {% endif %}
+        <p><strong>Name:</strong> {{ profile_info[0] }}</p><br>
+        <p><strong>Phone Number:</strong> {{ profile_info[1] }}</p><br>
+        <p><strong>Email:</strong> {{ profile_info[2] }}</p>
+    </div><br>
+        <button class="edit-button" onclick="location.href='/jobseeker_edit_profile';">Edit</button>
+        <button class="back-button" onclick="location.href='/jobseeker_form'">Back</button>
+</body>
+</html>

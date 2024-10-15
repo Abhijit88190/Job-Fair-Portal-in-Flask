@@ -1,0 +1,114 @@
+ /* Table */
+table {
+    margin-left: 10px;
+    width: 98%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+/* Table Header */
+table th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Table Body */
+table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Alternating Row Colors */
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover Effect */
+table tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* Button Styles */
+.approve-button, .reject-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.approve-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.reject-button {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Popup Form Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 20px;
+    z-index: 1000;
+    width: 70%; /* Enlarge form width */
+}
+
+.popup textarea {
+    width: 100%; /* Enlarge textarea width */
+    height: 200px; /* Enlarge textarea height */
+    margin-bottom: 10px;
+}
+
+.popup button[type="submit"], .popup button.cancel-button {
+    padding: 10px 20px; /* Enlarge button padding */
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+.popup button[type="submit"] {
+    background-color: #4CAF50;
+}
+
+.popup button.cancel-button {
+    background-color: #f44336; /* Red color for cancel button */
+    margin-left: 10px;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Notification Counter Styles */
+.notification-counter {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+}

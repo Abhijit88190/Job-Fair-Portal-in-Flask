@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+.container {
+    height: auto;
+    margin: 50px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 1px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.details-item {
+    margin-bottom: 15px;
+}
+.details-item label {
+    font-weight: bold;
+}
+.btn-back {
+    display: block;
+    width: 100px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn-action {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}

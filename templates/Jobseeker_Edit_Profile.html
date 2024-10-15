@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        form {
+            width: 50%;
+            margin: 0 auto;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        
+        input[type="submit"] {
+            background-color: blue;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>        
+</head>
+<body>
+    <h1>Jobseeker Edit Profile</h1>
+    <form action="{{ url_for('jobseeker_update_profile') }}" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ profile_info[0] }}"><br><br>
+        
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" value="{{ profile_info[1] }}"><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" value="{{ profile_info[2] }}"><br><br>
+        
+        <input type="submit" value="Save Changes">
+    </form>
+    <a href="{{ url_for('jobseeker_profile') }}">Back to Profile</a>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page | Job Portal</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Home_Page.css') }}">
+    </head>
+    <body>
+        <div class="top-navbar"> 
+            <div class="left-side">
+                <span>Government of Odisha</span>
+            </div>
+        </div>
+        <div class="bottom-navbar">
+            <div class="left-side">
+                <a href="/">
+                    <img src=data:image/png;base64,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 title="Odisha Logo">
+                </a>
+                <h2>Job Portal</h2>
+            </div>
+            <div class="right-side">
+                <a href="#">Home</a>
+                <a href="#about" data-after="About">About Us</a>
+                <a href="#contact" data-after="Contact">Contact</a>
+            </div>
+        </div>
+        <div class="scrolling-notice">
+            <marquee behavior="scroll" direction="left"><b>* Mega job fair will held on the 20 June from 8 am to 4pm at Jagatsinghpur district.</b></marquee>
+        </div>
+        <div class="registration">
+            <ul>
+                <li>
+                    <button style="background-color:#FFFF33;">
+                        <a href="#" >Registration</a>
+                        <ul style="background-color:#FFFF33;">
+                            <a href="{{url_for('employer_register')}}">Employer register</a>
+                            <br>
+                            <br>
+                            <a href="{{url_for('jobseeker_register')}}">Jobseeker register</a>
+                        </ul>
+                    </button>
+                </li>
+                <li>
+                    <button style="background-color:#00FF00;">
+                        <a href="{{url_for('login')}}" >Login</a>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <section>
+        <div class="banner">
+            <img src="https://png.pngtree.com/background/20211215/original/pngtree-recruitment-and-job-seeker-background-design-picture-image_1492121.jpg" width="1500" height="550" alt="BannerImage">
+        </div>
+        <section><br>
+
+        <section id="about">
+            <div class="about container">
+                <h1 class="section-title">About Us</h1><br>
+                <div class="col-left">
+                    <div class="about-img">
+                        <img src="https://kinsta.com/wp-content/uploads/2021/11/about-us-page.png" alt="img" width="500" height="290">
+                    </div>
+                </div>
+                <div class="col-right">
+                    <h2><u>Job Fair at the Job Portal</u></h2>
+                    <p>The Job Fair at our Job Portal is an exciting opportunity for job seekers to connect with a wide range of employers offering diverse employment  opportunities.Whether you're a recent graduate, a seasoned professional, or someone looking to switch careers, the Job Fair provides a platform to explore new possibilities and network with potential employers.</p>
+                </div>
+            </div>
+        </section>
+        <br>
+        <br>
+
+
+
+<section id="contact">
+    <div class="contact container">
+    <div class="contact-items">
+        <h1 class="section-title">Contact Us</h1>
+        <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+            </svg>
+        <div class="contact-info">
+            <h2>0674-220467</h2>
+        </div>
+        </div>
+        <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+            </svg> 
+        <div class="contact-info">
+            <h2>Charchika Bazar in Jagatsinghpur- Jaypur Road, 1/2 kms. away from Bus Stop near the Residence of the Collector, Jagatsinghpur</h2>
+        </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section id="footer">
+    <div class="footer container">
+    <p <strong>Copyright &copy; 2024 <a style="color:white;" href="https://odisha.gov.in">Government Of Odisha</a> </strong> All rights reserved.</p>
+    </div>
+</section>
+<script>
+    function checkTime() {
+        var now = new Date();
+        var start = new Date();
+        start.setHours(8, 0, 0); // Set start time to 8 am
+        var end = new Date();
+        end.setHours(16, 0, 0); // Set end time to 4 pm
+    
+        if (now >= start && now <= end) {
+            document.querySelector('.scrolling-notice').style.display = 'block';
+        } else {
+            document.querySelector('.scrolling-notice').style.display = 'none';
+        }
+    }
+    
+    // Check time every minute
+    setInterval(checkTime, 600000000);
+</script>    
+</body>
+</html>

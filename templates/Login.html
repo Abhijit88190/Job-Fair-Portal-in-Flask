@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Login.css') }}">
+    <script>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {% if category == 'error' %}
+                        alert("{{ message }}");
+                    {% elif category == 'success' %}
+                        alert("{{ message }}");
+                        {% if role == 'Jobseeker' %}
+                            window.location.href = "{{ url_for('employer_form') }}";
+                        {% elif role == 'Employer' %}
+                            window.location.href = "{{ url_for('jobseeker_form') }}";
+                        {% elif role == 'DEO' %}
+                            window.location.href = "{{ url_for('deo_dashboard') }}";   
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form id="loginForm" action="/login" method="POST" onsubmit="return validateForm()">
+            <h1><u>Login Page</u></h1><br>
+            <div class="form-group">
+                <label for="role"><b>User Type</b></label>
+                <select class="form-control" id="role" name="role" required>
+                    <option value="">---Select---</option>
+                    <option value="DEO">DEO</option>
+                    <option value="PIA">PIA</option>
+                    <option value="Employer">Employer</option>
+                    <option value="Jobseeker">Jobseeker</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="email"><b>User ID</b></label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your User Id" required>
+            </div>
+            <div class="form-group">
+                <label for="password"><b>Password</b></label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter Your Password" required>
+            </div>
+            <div id="container" style="display: flex; align-items: center;">
+                <div id="cap" style="margin-right: 10px;"></div>
+                <input type="text" class="form-control" id="captchacode" name="captcha" placeholder="Captcha" required style="margin-right: 10px;">
+                <button id="refresh-btn" onclick="refresh()">Refresh</button>
+            </div>
+            <br>
+            <div class="form-group buttons">
+                <button type="submit" class="btn-submit" value="Login">Login</button>
+                <button type="cancel" class="btn-cancel">Clear</button>
+            </div>
+            <div class="form-group">
+                <a href="/forgot_password">Forgot Password?</a>
+            </div>
+            <div class="form-group">
+                <a href="/">Not registered? Click here to register.</a>
+            </div>
+        </form>   
+    </div>
+    <script src="{{ url_for('static', filename='Login.js') }}"></script>
+</body>
+</html>

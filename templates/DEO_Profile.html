@@ -1,0 +1,43 @@
+<!-- templates/profile.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEO Profile</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>DEO Profile</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for deo in deo_info %}
+        <tr>
+            <td>{{ deo[0] }}</td>  <!-- Accessing elements by index -->
+            <td>{{ deo[1] }}</td>
+            <td>{{ deo[2] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <p>Do you want top change Password? <a href="/change_password">change password</a></p> 
+</div>
+
+<!-- Include Bootstrap JS (and any other necessary scripts) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

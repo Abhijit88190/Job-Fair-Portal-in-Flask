@@ -1,0 +1,82 @@
+/* Style for the form container */
+.form-container {
+    width: 900px;
+    height: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Style for the table */
+table {
+    width: 100%;
+    height: 250px;
+    border-collapse: collapse;
+}
+
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="file"]
+{
+    width: 70%;
+}
+
+
+/* Style for the gender options */
+.gender-options {
+    display: inline-block;
+}
+
+
+    input[type="submit"] {
+        margin-left: 580px;
+        background-color: green;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: green;
+    }
+
+    #profile-picture-preview {
+        width: 100px;
+        height: 100px;
+        background-size: cover;
+        background-position: center;
+    }
+    
+
+
+
+
+ /* CSS styles for profile picture */
+.profile-container {
+    text-align: left; /* Align the content to the left */
+    margin: 2px;
+    padding: 4px;
+}
+
+.profile-picture {
+    width: 150px; /* Adjust as needed */
+    height: 150px; /* Adjust as needed */
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensure the image covers the entire container */
+    border: 2px solid #fff; /* Add a border to the image */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+    margin-bottom: 8px; /* Add some space below the image */
+    float: left; /* Float the image to the left */
+    margin-right: 20px; /* Add some space to the right of the image */
+}
+
+

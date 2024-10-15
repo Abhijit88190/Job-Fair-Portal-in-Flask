@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Jobseeker_Display_Data.css') }}">
+    <title>Display Data</title>
+</head>
+<body>
+    <!-- Jobseekers Information Table -->
+    <h2>Jobseekers Information</h2>
+    <table border="1">
+        <!-- Table headers -->
+        <thead>
+            <tr>
+                <th>Application ID</th>
+                <th>Phone Number</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>DOB</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <!-- Table body -->
+        <tbody>
+            <!-- Loop through jobseekers and display their information -->
+            {% for jobseeker in jobseekers %}
+            <tr>
+                <!-- Display jobseeker information -->
+                <!-- Buttons for Select and Reject actions -->
+                <td>{{ jobseeker[0] }}</td>
+                <td>{{ jobseeker[1] }}</td>
+                <td>{{ jobseeker[2] }}</td>
+                <td>{{ jobseeker[3] }}</td>
+                <td>{{ jobseeker[4] }}</td>
+                <td>{{ jobseeker[5] }}</td>
+                <td>{{ jobseeker[6] }}</td>
+                <td>
+                    <button class="approve-button" onclick="showPopup('{{ jobseeker[2] }}')">Select</button>
+                    <button class="reject-button" onclick="displayMessage('{{ jobseeker[2] }}')">Reject</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Popup Form for Sending Report -->
+    <div id="popup-form" class="popup" aria-labelledby="popup-title">
+        <!-- Popup form content -->
+        <h3 id="popup-title">Generate Report</h3>
+        <textarea id="report-message" rows="8" cols="50" placeholder="Edit your message"></textarea>
+        <br>
+        <button type="submit" onclick="sendReport()">Send Report</button>
+        <button class="cancel-button" onclick="cancelReport()">Cancel</button>
+    </div>
+    <div id="popup-overlay" class="popup-overlay"></div>
+
+    <!-- Notification Counter -->
+    <div id="notification-counter" class="notification-counter"></div>
+
+    <!-- JavaScript code for handling popup form and notification counter -->
+    <script>
+       // Function to update the notification counter
+    function updateNotificationCounter(count) {
+        var counter = document.getElementById("notification-counter");
+        counter.innerText = count;
+    }
+
+    // Example: Initialize notification count to 0
+    var notificationCount = 0;
+
+    function showPopup(name) {
+        // Display the popup form and overlay
+        document.getElementById("popup-form").style.display = "block";
+        document.getElementById("popup-overlay").style.display = "block";
+
+        // Set the default message with the name
+        document.getElementById("report-message").value = "Dear " + name + ",\n\nYou are Selected For this job from TCS and Your job location is Naida, and your salary is 3 lakh per annum.\n\nBest regards,\nHR Team";
+
+    }
+
+    function cancelReport() {
+        // Close the popup form and overlay
+        document.getElementById("popup-form").style.display = "none";
+        document.getElementById("popup-overlay").style.display = "none";
+    }
+
+    function sendReport() {
+        // Get the report message
+        var reportMessage = document.getElementById("report-message").value;
+
+        // Retrieve existing reports from localStorage or initialize to an empty array
+        var reports = JSON.parse(localStorage.getItem("reports")) || [];
+
+        // Add the new report to the array
+        reports.push(reportMessage);
+
+        // Store the updated reports back in localStorage
+        localStorage.setItem("reports", JSON.stringify(reports));
+
+        // Increment notification count
+        notificationCount++;
+        document.getElementById("notification-counter").innerText = notificationCount;
+    }
+    </script>
+</body>
+</html>

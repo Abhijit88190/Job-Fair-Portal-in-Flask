@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employer Registration Form</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Employer_register_form.css') }}">    
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+<div class="container">
+    <h1>Employer Registration Form</h1>
+    <form method="post" action="{{ url_for('employer_register') }}" id="employerForm">
+
+        <div class="form-group">
+            <label for="organizationName"><b>Name of Organization:</b></label>
+            <input type="text" id="organizationName" name="organizationName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="establishedOn"><b>Established on:<b></label>
+            <input type="text" id="establishedOn" name="establishedOn" required>
+        </div>
+
+        <div class="form-group">
+            <label for="aboutCompany"><b>About Company:<b></label>
+            <textarea id="aboutCompany" name="aboutCompany" rows="5" cols="50" placeholder="Write briefly about company's services, products, provides by company" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="address"><b>Address:<b></label>
+            <textarea id="address" name="address" rows="4" cols="50" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">Mobile:</label>
+            <input type="text" id="mobile" name="mobile" required>
+        </div>
+
+        <div class="form-group">
+            <label for="telephone">Telephone:</label>
+            <input type="text" id="telephone" name="telephone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email"><b>Email ID:<b></label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="website"><b>Website:<b></label>
+            <input type="text" id="website" name="website" required>
+        </div>
+
+        <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        </div>
+
+        <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+        </div>
+
+        <button type="submit">Submit</button>
+        <button type="reset" id="reset">Cancel</button>
+    </form>
+</div>
+<script>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'error' %}
+                    alert("{{ message }}");
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</script>
+</body>
+</html>

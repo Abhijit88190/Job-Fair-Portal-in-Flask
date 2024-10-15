@@ -1,0 +1,142 @@
+ /* CSS styles for profile picture */
+.profile-container {
+    text-align: left; /* Align the content to the left */
+    margin: 2px;
+    padding: 4px;
+}
+
+.profile-picture {
+    width: 150px; /* Adjust as needed */
+    height: 150px; /* Adjust as needed */
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensure the image covers the entire container */
+    border: 2px solid #fff; /* Add a border to the image */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+    margin-bottom: 8px; /* Add some space below the image */
+    float: left; /* Float the image to the left */
+    margin-right: 20px; /* Add some space to the right of the image */
+}
+
+ /* CSS styles for profile picture */
+.profile-container {
+    text-align: left; /* Align the content to the left */
+    margin: 2px;
+    padding: 4px;
+}
+
+.profile-picture {
+    width: 150px; /* Adjust as needed */
+    height: 150px; /* Adjust as needed */
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensure the image covers the entire container */
+    border: 2px solid #fff; /* Add a border to the image */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+    margin-bottom: 8px; /* Add some space below the image */
+    float: left; /* Float the image to the left */
+    margin-right: 20px; /* Add some space to the right of the image */
+}
+/* CSS for the reports list container */
+#reports-container {
+position: fixed; /* Position the container relative to the viewport */
+top: 20px; /* Set the distance from the top of the viewport */
+left: 60%; /* Center horizontally */
+transform: translateX(-50%); /* Adjust to center horizontally */
+width: 300px; /* Set a fixed width for the container */
+}
+
+/* CSS for the reports list */
+#reports-list {
+list-style-type: none; /* Remove bullet points */
+padding: 0; /* Reset padding */
+margin: 0; /* Reset margin */
+max-height: 200px; /* Maximum height of the box */
+overflow-y: auto; /* Add vertical scrollbar when content exceeds box height */
+}
+
+#reports-list li {
+background-color: #f9f9f9; /* Background color */
+border: 1px solid #ddd; /* Border */
+border-radius: 5px; /* Rounded corners */
+padding: 15px; /* Padding */
+margin-bottom: 5px; /* Margin between reports */
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+#reports-list li:last-child {
+margin-bottom: 0; /* Remove margin for the last item */
+}
+/* Style the scrollbar */
+#reports-list::-webkit-scrollbar {
+width: 5px; /* Width of the scrollbar */
+}
+
+/* Track (background) of the scrollbar */
+#reports-list::-webkit-scrollbar-track {
+background: transparent; /* Make the scrollbar track transparent */
+}
+
+/* CSS for the notification counter */
+.notification-counter {
+color: red; /* Text color */
+padding: 1px 5px; /* Padding */
+border-radius: 50%; /* Rounded shape */
+visibility: visible; /* Initially visible */
+
+}
+
+
+ /* Styles for the report container */
+.report-container {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+.report-container .section-title {
+    color: blue; /* Blue color for the heading */
+    font-weight: bold;
+}
+
+.report-container .form-row {
+    margin-top: 20px;
+}
+
+.report-container .fontWeight13 {
+    color: red; /* Red color for the text */
+    font-weight: bold; /* Bold text */
+    font-size: 18px;
+}
+
+/* Styles for the jobseeker details box */
+.jobseeker-details-box {
+    margin-top: 40px;
+    padding-left: 100px; /* Adjust as needed */
+}
+
+.jobseeker-details-box h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.jobseeker-details {
+    width: 90%;
+    
+}
+
+.jobseeker-details th,
+.jobseeker-details td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.jobseeker-details th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.jobseeker-details td {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+}
